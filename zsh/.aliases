@@ -1,0 +1,3 @@
+alias bitwarden="~/apps/Bitwarden-2024.1.0-x86_64.AppImage"
+alias obsidian="~/apps/Obsidian-1.5.3.AppImage"
+alias nvim="~/apps/nvim-linux64/bin/nvim"
