@@ -101,3 +101,5 @@ source $ZSH/oh-my-zsh.sh
 #
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/.aliases
+# i3 keyboard layout
+setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'
