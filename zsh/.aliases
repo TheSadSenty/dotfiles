@@ -1,4 +1,4 @@
 alias bitwarden="~/apps/Bitwarden-2024.1.0-x86_64.AppImage"
 alias obsidian="~/apps/Obsidian-1.5.3.AppImage"
 alias nvim="~/apps/nvim-linux64/bin/nvim"
-alias qbittorrent="~/apps/qbittorrent-8.6.3_lt20_x86_64.appimage"
+alias qbittorrent="~/apps/qbittorrent-4.6.3_lt20_x86_64.appimage"
