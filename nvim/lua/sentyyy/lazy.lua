@@ -11,5 +11,15 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup("sentyyy.plugins")
+require("lazy").setup({ { import = "sentyyy.plugins" }, { import = "sentyyy.plugins.lsp" } }, {
+  install = {
+    colorscheme = { "codedark" },
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
+})
