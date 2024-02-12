@@ -195,7 +195,8 @@ bindsym Mod4+r mode "resize"
 bar {
         status_command i3status
 }
-
+# Moniror switch
+bindsym Mod4+Shift+s exec ~/.config/i3/i3-display-swap.sh
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)

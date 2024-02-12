@@ -13,6 +13,7 @@
           - htop
           - curl
           - ca-certificates
+          - jq
         state: latest
     - name: "Install snap packages" 
       community.general.snap:
