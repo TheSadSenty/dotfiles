@@ -6,7 +6,7 @@ return {
     "williamboman/mason.nvim",
     {
       "williamboman/mason-lspconfig.nvim",
-      opt = { automatic_installation = false},
+      opt = { automatic_installation = false },
     },
   },
   config = function()
@@ -95,6 +95,17 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+
+    lspconfig["ansiblels"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["ast_grep"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
