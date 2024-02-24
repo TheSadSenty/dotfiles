@@ -1,0 +1,22 @@
+- name: My dotfiles config 
+  hosts: localhost
+  become: yes
+  vars_files:
+    - ./vars.yml
+  tasks:
+    - name: "Install system packages via pacman"
+      ansible.builtin.pacman:
+        name:
+          - git
+          - i3
+          - zsh
+          - htop
+          - curl
+          - ca-certificates
+          - jq
+          - fzf 
+          - rustup
+          - docker
+          - docker-compose
+        state: latest
+      when: ansible_distribution == "Archlinux"
