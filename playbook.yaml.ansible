@@ -18,5 +18,10 @@
           - rustup
           - docker
           - docker-compose
+          - stow
+          - unzip
+          - nodejs
+          - npm
+          - neovim
         state: latest
       when: ansible_distribution == "Archlinux"
