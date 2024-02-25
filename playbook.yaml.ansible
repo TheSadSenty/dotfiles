@@ -23,5 +23,6 @@
           - nodejs
           - npm
           - neovim
+          - rofi
         state: latest
       when: ansible_distribution == "Archlinux"
