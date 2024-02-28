@@ -100,6 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 #
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/.aliases
+source $HOME/.aliases.sh
 # i3 keyboard layout
-setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'
+setxkbmap -layout us,ru -option 'grp:ctrl_shift_toggle'
