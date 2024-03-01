@@ -102,4 +102,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/.aliases.sh
 # i3 keyboard layout
-setxkbmap -layout us,ru -option 'grp:ctrl_shift_toggle'
+setxkbmap -layout us,ru -option 'grp:win_space_toggle'
+SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket; export SSH_AUTH_SOCK;
