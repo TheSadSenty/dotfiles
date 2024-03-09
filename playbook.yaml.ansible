@@ -25,6 +25,7 @@
           - neovim
           - rofi
           - ansible-lint
+	  - xclip
         state: latest
       when: ansible_distribution == "Archlinux"
     - name: Download Oh My Zsh installation script
