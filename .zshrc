@@ -60,8 +60,16 @@ ZSH_THEME="robbyrussell"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
 
+HISTORY_IGNORE="(ls|cd|pwd|exit|cd)*"
+HIST_STAMPS="dd.mm.yyyy"
+
+setopt INC_APPEND_HISTORY 
+setopt SHARE_HISTORY  
+setopt APPEND_HISTORY
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -70,7 +78,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete sudo)
+plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,7 +91,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+export EDITOR='nvim'
 # else
 #   export EDITOR='mvim'
 # fi
