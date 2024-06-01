@@ -1,15 +1,14 @@
 - name: My dotfiles config 
   hosts: localhost
   become: yes
-  vars_files:
-    - ./vars.yml
   tasks:
     - name: "Install system packages via pacman"
       ansible.builtin.pacman:
         name:
           - git
           - i3
-          - zsh
+          - fish
+          - fisher
           - htop
           - curl
           - ca-certificates
@@ -24,34 +23,18 @@
           - npm
           - neovim
           - rofi
-          - ansible-lint
-	  - xclip
-	  - bat
+          - xclip
+          - bat
+          - cmake
         state: latest
       when: ansible_distribution == "Archlinux"
-    - name: Download Oh My Zsh installation script
-      get_url:
-        url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-        dest: /tmp/install_ohmyzsh.sh
-    - name: Run Oh My Zsh installation script
-      command: sh /tmp/install_ohmyzsh.sh --unattended
-      register: ohmyzsh_result
-      failed_when: "'FAILED' in ohmyzsh_result.stderr"
-    - name: "Install zsh-autosuggestions"
-      ansible.builtin.git:
-        repo: "https://github.com/zsh-users/zsh-autosuggestions"
-        dest: "/home/sentyyy/.oh-my-zsh/plugins/zsh-autosuggestions"
-        single_branch: yes
-        version: "master"
-    - name: "Install zsh-syntax-highlighting"
-      ansible.builtin.git:
-        repo: "https://github.com/zsh-users/zsh-syntax-highlighting"
-        dest: "/home/sentyyy/.oh-my-zsh/plugins/zsh-syntax-highlighting"
-        single_branch: yes
-        version: "master"
-    - name: "Install zsh-autocomplete"
-      ansible.builtin.git:
-        repo: "https://github.com/marlonrichert/zsh-autocomplete"
-        dest: "/home/sentyyy/.oh-my-zsh/plugins/zsh-autocomplete"
-        single_branch: yes
-        version: "main"        
+    - name: "Add the user 'sentyyy' with a fish shell, appending the group 'vboxsf' and 'docker' to the user's groups" 
+      ansible.builtin.user:
+        name: sentyyy
+        shell: /usr/bin/fish
+        groups: vboxsf,docker
+        append: yes
+    - name: "Install PatrickF1/fzf.fish"
+      ansible.builtin.shell: fisher install PatrickF1/fzf.fish
+      args:
+        executable: /usr/bin/fish
