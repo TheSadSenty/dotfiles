@@ -6,4 +6,5 @@ if status is-interactive
 	set -gx EDITOR "nvim"
 	setxkbmap -layout us,ru -option 'grp:win_space_toggle'
 	set -gx SSH_AUTH_SOCK /run/user/1000/ssh-agent.socket
+	fish_add_path -a ~/.cargo/bin/
 end
