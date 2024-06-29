@@ -155,8 +155,8 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
 -- Spell check
-vim.opt.spelllang = 'en_us'
-vim.opt.spell = true
+-- vim.opt.spelllang = 'en_us'
+-- vim.opt.spell = true
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -618,6 +618,7 @@ require('lazy').setup {
         'ansible-language-server',
         'docker-compose-language-service',
         'dockerfile-language-server',
+        'harper-ls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
