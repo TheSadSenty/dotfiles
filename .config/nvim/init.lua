@@ -651,6 +651,10 @@ require('lazy').setup {
         rust = { 'rustfmt' },
         bash = { 'shfmt' },
         yaml = { 'prettier' },
+        css = { 'prettier' },
+        markdown = { 'prettier' },
+        html = { 'prettier' },
+        json = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
