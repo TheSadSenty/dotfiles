@@ -616,6 +616,8 @@ require('lazy').setup {
         'pyright',
         'autoflake',
         'flake8',
+        'isort',
+        'black',
         'bash-language-server',
         'shfmt',
         'rust-analyzer',
@@ -654,7 +656,7 @@ require('lazy').setup {
       },
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'autoflake' },
+        python = { 'isort', 'black', 'autoflake' },
         rust = { 'rustfmt' },
         bash = { 'shfmt' },
         yaml = { 'prettier' },
@@ -663,7 +665,7 @@ require('lazy').setup {
         html = { 'prettier' },
         json = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        -- python = {  },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
