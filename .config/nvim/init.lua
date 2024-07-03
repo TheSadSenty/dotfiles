@@ -154,6 +154,12 @@ vim.opt.scrolloff = 10
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
+vim.filetype.add {
+  filename = {
+    ['playbook.yml.ansible'] = 'ansible',
+    ['playbook.yaml.ansible'] = 'ansible',
+  },
+}
 -- Spell check
 -- vim.opt.spelllang = 'en_us'
 -- vim.opt.spell = true
@@ -616,6 +622,7 @@ require('lazy').setup {
         'rustfmt',
         'prettier',
         'ansible-language-server',
+        'ansible-lint',
         'docker-compose-language-service',
         'dockerfile-language-server',
         'harper-ls',
