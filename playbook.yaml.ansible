@@ -6,6 +6,8 @@
       ansible.builtin.pacman:
         name:
           - git
+          - gcc
+          - clang
           - i3
           - fish
           - fisher
@@ -26,15 +28,29 @@
           - xclip
           - bat
           - cmake
+          - make
+          - patch
+          - pyenv
         state: latest
       when: ansible_distribution == "Archlinux"
+
     - name: "Add the user 'sentyyy' with a fish shell, appending the group 'vboxsf' and 'docker' to the user's groups" 
       ansible.builtin.user:
         name: sentyyy
         shell: /usr/bin/fish
         groups: vboxsf,docker
         append: yes
+
     - name: "Install PatrickF1/fzf.fish"
       ansible.builtin.shell: fisher install PatrickF1/fzf.fish
       args:
         executable: /usr/bin/fish
+
+    - name: "Get pyenv root locathion"
+      ansible.builtin.shell: pyenv root
+      register: pyenv_root
+
+    - name: "Add pyenv-virtualenv"
+      ansible.builtin.git:
+        repo: https://github.com/pyenv/pyenv-virtualenv.git
+        dest: "{{ pyenv_root.stdout }}/plugins/pyenv-virtualenv"
