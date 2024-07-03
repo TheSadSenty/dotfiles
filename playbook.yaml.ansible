@@ -54,3 +54,18 @@
       ansible.builtin.git:
         repo: https://github.com/pyenv/pyenv-virtualenv.git
         dest: "{{ pyenv_root.stdout }}/plugins/pyenv-virtualenv"
+
+    - name: "Git clone vulhub"
+      ansible.builtin.git:
+        repo: https://github.com/vulhub/vulhub.git
+        dest: "/home/sentyyy/utils/vulhub"
+
+    - name: "Git clone SecLists"
+      ansible.builtin.git:
+        repo: https://github.com/danielmiessler/SecLists.git
+        dest: "/home/sentyyy/utils/seclists"
+
+    - name: "Git clone docker-compose-lamp"
+      ansible.builtin.git:
+        repo: https://github.com/sprintcube/docker-compose-lamp.git
+        dest: "/home/sentyyy/utils/lamp"
