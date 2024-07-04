@@ -1,6 +1,5 @@
 - name: My dotfiles config 
   hosts: localhost
-  become: yes
   tasks:
     - name: "Install system packages via pacman"
       ansible.builtin.pacman:
@@ -33,6 +32,7 @@
           - pyenv
           - lazygit
         state: latest
+      become: yes
       when: ansible_distribution == "Archlinux"
 
     - name: "Add the user 'sentyyy' with a fish shell, appending the group 'vboxsf' and 'docker' to the user's groups" 
@@ -59,14 +59,14 @@
     - name: "Git clone vulhub"
       ansible.builtin.git:
         repo: https://github.com/vulhub/vulhub.git
-        dest: "/home/sentyyy/utils/vulhub"
+        dest: "~/utils/vulhub"
 
     - name: "Git clone SecLists"
       ansible.builtin.git:
         repo: https://github.com/danielmiessler/SecLists.git
-        dest: "/home/sentyyy/utils/seclists"
+        dest: "~/utils/seclists"
 
     - name: "Git clone docker-compose-lamp"
       ansible.builtin.git:
         repo: https://github.com/sprintcube/docker-compose-lamp.git
-        dest: "/home/sentyyy/utils/lamp"
+        dest: "~/utils/lamp"
