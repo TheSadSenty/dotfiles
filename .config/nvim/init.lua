@@ -191,11 +191,20 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
+vim.keymap.set('n', '<leader>ov', ':Vexplore<CR>', { desc = '[O]pen new buffer in [v]ertica split' })
+vim.keymap.set('n', '<leader>oh', ':Vexplore<CR>', { desc = '[O]pen new buffer in [h]orizontal split' })
+
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+--Tabs
+vim.keymap.set('n', '<leader>nt', ':tab split<CR>', { desc = '[N]ew [t]ab' })
+vim.keymap.set('n', '<leader>h', ':-tabnext<CR>', { desc = 'Go to previous tab' })
+vim.keymap.set('n', '<leader>l', ':+tabnext<CR>', { desc = 'Go to next tab' })
+vim.keymap.set('n', '<leader>H', ':-tabmove<CR>', { desc = 'Move current tab to the left' })
+vim.keymap.set('n', '<leader>L', ':+tabmove<CR>', { desc = 'Move current tab to the right' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
