@@ -198,6 +198,13 @@ require('lazy').setup {
         changedelete = { text = '~' },
       },
     },
+    config = function()
+      require('gitsigns').setup()
+      vim.keymap.set('n', '<leader>gh', ':Gitsigns preview_hunk_inline<CR>', { desc = '[G]it preview [h]unk' })
+      vim.keymap.set('n', '<leader>gk', ':Gitsigns prev_hunk<CR>', { desc = '[G]it previous hunk' })
+      vim.keymap.set('n', '<leader>gj', ':Gitsigns next_hunk<CR>', { desc = '[G]it next hunk' })
+      vim.keymap.set('n', '<leader>gr', ':Gitsigns reset_hunk<CR>', { desc = '[G]it [r]eset hunk' })
+    end,
   },
 
   -- NOTE: Plugins can also be configured to run lua code when they are loaded.
