@@ -551,7 +551,7 @@ require('lazy').setup {
         'stylua', -- Used to format lua code
         'pyright',
         'autoflake',
-        'flake8',
+        'ruff',
         'isort',
         'black',
         'bash-language-server',
@@ -592,7 +592,7 @@ require('lazy').setup {
       },
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'isort', 'black', 'autoflake' },
+        python = { 'ruff', 'isort', 'black', 'autoflake' },
         rust = { 'rustfmt' },
         bash = { 'shfmt' },
         yaml = { 'prettier' },
