@@ -574,6 +574,9 @@ require('lazy').setup {
         'clang-format',
         'cpplint',
         'clangd',
+        'gopls',
+        'golangci-lint',
+        'gofumpt',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -611,6 +614,7 @@ require('lazy').setup {
         html = { 'prettier' },
         json = { 'prettier' },
         cpp = { 'clang-format' },
+        go = { 'gofumpt' },
         -- Conform can also run multiple formatters sequentially
         -- python = {  },
         --
