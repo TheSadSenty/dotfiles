@@ -31,6 +31,17 @@
           - patch
           - pyenv
           - lazygit
+          - go
+          - ripgrep
+          - luarocks
+          - jdk21-openjdk
+          - jdk17-openjdk
+          - ruby
+          - lua51
+          - tree-sitter
+          - ttf-jetbrains-mono-nerd
+          - php
+          - composer
         state: latest
       become: yes
       when: ansible_distribution == "Archlinux"
