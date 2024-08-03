@@ -571,6 +571,9 @@ require('lazy').setup {
         'docker-compose-language-service',
         'dockerfile-language-server',
         'harper-ls',
+        'clang-format',
+        'cpplint',
+        'clangd',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -599,7 +602,7 @@ require('lazy').setup {
       },
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'ruff', 'isort', 'black', 'autoflake' },
+        python = { 'black', 'ruff', 'isort', 'autoflake' },
         rust = { 'rustfmt' },
         bash = { 'shfmt' },
         yaml = { 'prettier' },
@@ -607,6 +610,7 @@ require('lazy').setup {
         markdown = { 'prettier' },
         html = { 'prettier' },
         json = { 'prettier' },
+        cpp = { 'clang-format' },
         -- Conform can also run multiple formatters sequentially
         -- python = {  },
         --
