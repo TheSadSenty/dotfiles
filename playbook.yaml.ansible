@@ -82,6 +82,21 @@
         repo: https://github.com/pyenv/pyenv-virtualenv.git
         dest: "{{ pyenv_root.stdout }}/plugins/pyenv-virtualenv"
 
+    - name: Create spell directory in nvim directory
+      ansible.builtin.file:
+        path: ~/.config/nvim/spell/
+        state: directory
+
+    - name: Download ru.utf-8.spl
+      ansible.builtin.get_url:
+        url: http://ftp.vim.org/vim/runtime/spell/ru.utf-8.spl
+        dest: ~/.config/nvim/spell/ru.utf-8.spl
+
+    - name: Download ru.utf-8.sug
+      ansible.builtin.get_url:
+          url: http://ftp.vim.org/vim/runtime/spell/ru.utf-8.sug
+          dest: ~/.config/nvim/spell/ru.utf-8.sug
+
     - name: "Git clone vulhub"
       ansible.builtin.git:
         repo: https://github.com/vulhub/vulhub.git

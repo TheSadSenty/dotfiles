@@ -75,8 +75,8 @@ vim.filetype.add {
   },
 }
 -- Spell check
--- vim.opt.spelllang = 'en_us'
--- vim.opt.spell = true
+vim.opt.spelllang = { 'en_us', 'ru_ru' }
+vim.opt.spell = true
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -605,7 +605,7 @@ require('lazy').setup {
       },
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'black', 'ruff', 'isort', 'autoflake' },
+        python = { 'black', 'ruff' },
         rust = { 'rustfmt' },
         bash = { 'shfmt' },
         yaml = { 'prettier' },
