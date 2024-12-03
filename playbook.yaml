@@ -43,6 +43,9 @@
           - composer
           - keepassxc
           - uv
+          - yay
+          - picom
+          - alacritty
         state: latest
       become: yes
       when: ansible_distribution == "Archlinux"
