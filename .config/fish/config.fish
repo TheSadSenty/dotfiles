@@ -13,5 +13,6 @@ set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
 
 setxkbmap -layout us,ru -option 'grp:win_space_toggle'
 
-fish_add_path -a ~/.cargo/bin/
+fish_add_path ~/.cargo/bin/
+fish_add_path ~/go/bin/
 
