@@ -29,7 +29,6 @@
           - cmake
           - make
           - patch
-          - pyenv
           - lazygit
           - go
           - ripgrep
@@ -43,6 +42,7 @@
           - php
           - composer
           - keepassxc
+          - uv
         state: latest
       become: yes
       when: ansible_distribution == "Archlinux"
@@ -72,15 +72,6 @@
       ansible.builtin.shell: fisher install PatrickF1/fzf.fish
       args:
         executable: /usr/bin/fish
-
-    - name: "Get pyenv root locathion"
-      ansible.builtin.shell: pyenv root
-      register: pyenv_root
-
-    - name: "Add pyenv-virtualenv"
-      ansible.builtin.git:
-        repo: https://github.com/pyenv/pyenv-virtualenv.git
-        dest: "{{ pyenv_root.stdout }}/plugins/pyenv-virtualenv"
 
     - name: Create spell directory in nvim directory
       ansible.builtin.file:
