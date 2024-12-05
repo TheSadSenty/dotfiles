@@ -15,21 +15,19 @@ return {
     { 'nvim-telescope/telescope-ui-select.nvim' },
   },
   config = function()
-    require('telescope').setup {
-      defaults = {
+    local ignore_patterns = { 'node_modules', '.git', '.venv', 'target', 'lock' }
 
-        file_ignore_patterns = {
-          '.git/*',
-          'node%_modules/*',
-          'target/*',
-          '%a*.lock',
-          '.env/*',
-          '.venv/*',
-        },
-      },
+    require('telescope').setup {
       pickers = {
         find_files = {
+          file_ignore_patterns = ignore_patterns,
           hidden = true,
+        },
+        live_grep = {
+          file_ignore_patterns = ignore_patterns,
+          additional_args = function(_)
+            return { '--hidden' }
+          end,
         },
       },
       extensions = {
