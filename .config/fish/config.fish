@@ -6,7 +6,21 @@ if status is-interactive
     alias cat="bat"
 end
 
+# https://michaeluloth.com/neovim-switch-configs/
+function nvim
+    # Assumes all configs exist in directories named ~/.config/nvim-*
+    set -f config (fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
 
+    # If I exit fzf without selecting a config, don't open Neovim
+    if test -z $config
+        command nvim $argv
+        return
+    end
+
+    # Open Neovim with the selected config
+    set -fx NVIM_APPNAME $(basename $config)
+    command nvim $argv
+end
 
 set -gx EDITOR "nvim"
 set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket

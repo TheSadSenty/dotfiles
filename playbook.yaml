@@ -45,6 +45,7 @@
           - uv
           - yay
           - alacritty
+          - fd
         state: latest
       become: yes
       when: ansible_distribution == "Archlinux"
