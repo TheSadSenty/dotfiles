@@ -46,6 +46,7 @@
           - yay
           - alacritty
           - fd
+          - tmux
         state: latest
       become: yes
       when: ansible_distribution == "Archlinux"
