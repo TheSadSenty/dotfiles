@@ -147,7 +147,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-#bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -188,5 +188,11 @@ bar {
 # Assign apps to workspaces
 assign [class="firefox" instance="Navigator"] $ws2
 assign [class="KeePassXC" instance="keepassxc"] $ws3
+
 # Moniror switch
-bindsym $mod+Shift+s exec ~/.i3-display-swap.sh
+# bindsym $mod+Shift+s exec ~/.i3-display-swap.sh
+
+# Clipboard Screenshots
+# bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+p exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
