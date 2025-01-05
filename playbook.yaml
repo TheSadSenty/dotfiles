@@ -47,6 +47,8 @@
           - alacritty
           - fd
           - tmux
+          - xdotool
+          - maim
         state: latest
       become: yes
       when: ansible_distribution == "Archlinux"
