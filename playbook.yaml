@@ -10,7 +10,7 @@
           - i3
           - fish
           - fisher
-          - htop
+          - btop
           - curl
           - ca-certificates
           - jq
@@ -43,12 +43,15 @@
           - composer
           - keepassxc
           - uv
-          - yay
           - alacritty
           - fd
           - tmux
           - xdotool
           - maim
+          - xorg
+          - ly
+          - xorg-xinit
+          - virtualbox-guest-iso
         state: latest
       become: yes
       when: ansible_distribution == "Archlinux"
@@ -96,16 +99,6 @@
       ansible.builtin.file:
         path: ~/.config/nvim/spell/
         state: directory
-
-    - name: Download ru.utf-8.spl
-      ansible.builtin.get_url:
-        url: http://ftp.vim.org/vim/runtime/spell/ru.utf-8.spl
-        dest: ~/.config/nvim/spell/ru.utf-8.spl
-
-    - name: Download ru.utf-8.sug
-      ansible.builtin.get_url:
-        url: http://ftp.vim.org/vim/runtime/spell/ru.utf-8.sug
-        dest: ~/.config/nvim/spell/ru.utf-8.sug
 
     - name: "Git clone vulhub"
       ansible.builtin.git:

@@ -98,6 +98,8 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua',
       'black',
+      'flake8',
+      'mypy',
       'shfmt',
       'prettier',
       'clang-format',
