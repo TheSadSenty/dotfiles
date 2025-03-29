@@ -16,7 +16,7 @@ return {
       html = { 'prettier' },
       json = { 'prettier' },
       cpp = { 'clang-format' },
-      go = { 'gofumpt', 'goimports' },
+      go = { 'gofumpt' },
     },
   },
 }
