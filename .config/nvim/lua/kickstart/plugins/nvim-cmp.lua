@@ -15,6 +15,7 @@ return { -- Autocompletion
 
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    'lukas-reineke/cmp-under-comparator',
   },
   config = function()
     -- See `:help cmp`
@@ -58,7 +59,16 @@ return { -- Autocompletion
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-        { name = 'buffer' },
+      },
+      sorting = {
+        comparators = {
+          cmp.config.compare.offset,
+          cmp.config.compare.exact,
+          cmp.config.compare.score,
+          require('cmp-under-comparator').under,
+          cmp.config.compare.recently_used,
+          cmp.config.compare.kind,
+        },
       },
     }
   end,
