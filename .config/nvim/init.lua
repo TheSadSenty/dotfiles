@@ -58,9 +58,9 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
 vim.filetype.add {
-  filename = {
-    ['playbook.yml.ansible'] = 'ansible',
-    ['playbook.yaml.ansible'] = 'ansible',
+  pattern = {
+    ['.*_playbook%.yaml'] = 'yaml.ansible',
+    ['.*_playbook%.yml'] = 'yaml.ansible',
   },
 }
 -- Spell check
