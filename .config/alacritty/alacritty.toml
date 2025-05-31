@@ -23,5 +23,5 @@ style = "Regular"
 
 [general]
 import = [
-  "~/.config/alacritty/tokyo-night.toml"
+  "~/.config/alacritty/github-dark-high-contrast.toml"
 ]
