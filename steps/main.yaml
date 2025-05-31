@@ -1,0 +1,114 @@
+- defaults:
+    shell:
+      stderr: true
+      stdout: true
+
+- clean: ["~"]
+
+- clean:
+    ~/.config:
+      recursive: true
+
+- link:
+    ~/.xprofile:
+      path: ~/dotfiles/.xprofile
+
+- link:
+    ~/.config/:
+      glob: true
+      create: true
+      path: ~/dotfiles/.config/**
+
+- create:
+    - ~/Programming/
+    - ~/Programming/probes/
+
+# Shell stuff
+- omnipkg:
+    - install: [fish, fisher]
+
+- shell:
+    - command: chsh -s /usr/bin/fish
+      description: Making fish the default shell for current user
+      stdin: true
+
+- shell:
+    - command: fish -c 'fisher install PatrickF1/fzf.fish'
+      description: Install PatrickF1/fzf.fish
+
+# C/C++ stuff
+- omnipkg:
+    - install: [gcc, clang, cmake, make]
+
+# Python stuff
+- omnipkg:
+    - install: [python, uv, python-pdm]
+
+# Docker stuff
+- omnipkg:
+    - install: [docker, docker-compose, docker-buildx]
+
+# Rust stuff
+- omnipkg:
+    - install: [rustup]
+
+- shell:
+    - command: rustup default stable
+      description: Choose default rust toolchain
+      stdin: true
+
+# JS/TS stuff
+- omnipkg:
+    - install: [nodejs, npm]
+
+# Neovim stuff
+- omnipkg:
+    - install:
+        [
+          vim,
+          neovim,
+          lua51,
+          tree-sitter,
+          luarocks,
+          fzf,
+          ttf-jetbrains-mono-nerd,
+          ttf-nerd-fonts-symbols,
+          ripgrep,
+          fd,
+        ]
+
+# Go stuff
+- omnipkg:
+    - install: [go]
+
+# Java stuff
+- omnipkg:
+    - install: [jdk21-openjdk, jdk17-openjdk]
+
+# PHP stuff
+- omnipkg:
+    - install: [php, composer]
+
+# Ruby stuff
+- omnipkg:
+    - install: [ruby]
+
+# Dev stuff
+- omnipkg:
+    - install: [btop, lazygit, bat, jq, tmux]
+
+# Other stuff
+- omnipkg:
+    - install: [unzip, curl, ca-certificates, openssh]
+
+- shell:
+    - command: bash -c 'sudo usermod -aG docker $(id --user --name)'
+      description: Add current user to docker groups
+
+- shell:
+    - command: systemctl --user enable --now ssh-agent.service
+      description: Starting SSH agent
+
+- shell:
+    - command: sudo systemctl enable --now docker.service
+      description: Starting Docker daemon

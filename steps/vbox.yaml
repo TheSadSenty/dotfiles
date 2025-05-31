@@ -1,0 +1,12 @@
+- defaults:
+    shell:
+      stderr: true
+      stdout: true
+
+# VirtualBox stuff
+- omnipkg:
+    - install: [virtualbox-guest-utils]
+
+- shell:
+    - command: bash -c 'sudo usermod -aG vboxsf $(id --user --name)'
+      description: Add current user to vboxsf groups

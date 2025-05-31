@@ -1,0 +1,24 @@
+- defaults:
+    shell:
+      stderr: true
+      stdout: true
+
+# Xorg stuff
+- shell:
+    - command: sudo pacman --needed --noconfirm -Syy xorg
+      description: Install whole Xorg package group
+
+- omnipkg:
+    - install: [xdotool, maim, ly, xorg-xinit, xclip]
+
+# i3 stuff
+- omnipkg:
+    - install: [i3blocks, i3lock, i3status, i3-wm, rofi]
+
+# Other stuff
+- omnipkg:
+    - install: [keepassxc, firefox, alacritty, kitty]
+
+- shell:
+    - command: sudo systemctl enable --now ly.service
+      description: Starting Ly daemon
