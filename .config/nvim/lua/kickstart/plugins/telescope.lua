@@ -15,7 +15,7 @@ return {
     { 'nvim-telescope/telescope-ui-select.nvim' },
   },
   config = function()
-    local ignore_patterns = { 'node_modules', '.git', '.venv', 'target', 'lock' }
+    local ignore_patterns = { 'node_modules', '.git', '.venv', 'target', 'lock', 'dotbot', 'dotbot-omnipkg' }
 
     require('telescope').setup {
       pickers = {
