@@ -97,6 +97,10 @@
 - omnipkg:
     - install: [btop, lazygit, bat, jq, tmux]
 
+- shell:
+    - command: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+      description: Install Tmux plugin manager
+
 # Other stuff
 - omnipkg:
     - install: [unzip, curl, ca-certificates, openssh]
