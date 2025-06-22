@@ -1,6 +1,7 @@
 return { -- Autocompletion
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
+  enabled = false,
   dependencies = {
     {
       'L3MON4D3/LuaSnip',
