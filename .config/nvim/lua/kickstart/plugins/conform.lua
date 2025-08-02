@@ -1,5 +1,6 @@
 return {
   'stevearc/conform.nvim',
+  enabled = false,
   opts = {
     notify_on_error = true,
     format_after_save = {
