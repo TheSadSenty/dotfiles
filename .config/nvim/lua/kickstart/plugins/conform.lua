@@ -1,14 +1,10 @@
 return {
   'stevearc/conform.nvim',
-  enabled = false,
   opts = {
     notify_on_error = true,
-    format_after_save = {
-      lsp_format = 'fallback',
-    },
     formatters_by_ft = {
       lua = { 'stylua' },
-      python = { 'ruff_format', 'ruff_fix', 'ruff_organize_imports' },
+      python = { 'ruff_format', 'ruff_organize_imports' },
       rust = { 'rustfmt' },
       bash = { 'shfmt' },
       yaml = { 'prettier' },
@@ -20,4 +16,11 @@ return {
       go = { 'gofumpt' },
     },
   },
+  config = function()
+    local conform = require("conform")
+    conform.setup()
+    vim.keymap.set({ "n", "v" }, "<leader>f", function()
+      conform.format({ async = true, lsp_fallback = true })
+    end, { desc = "[F]ormat buffer" })
+  end,
 }
