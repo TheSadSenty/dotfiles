@@ -5,7 +5,7 @@ return {
     { 'williamboman/mason.nvim', opts = {} },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-    { 'j-hui/fidget.nvim', opts = {} },
+    { 'j-hui/fidget.nvim',       opts = {} },
     'saghen/blink.cmp',
   },
   config = function()
@@ -114,7 +114,7 @@ return {
       -- Go
       gopls = {},
       -- Python
-      pyright = {},
+      basedpyright = {},
       ruff = {},
       -- Ansible
       ansiblels = {},
