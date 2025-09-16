@@ -35,6 +35,11 @@ floating_maximum_size 1152 x 648
 input * accel_profile flat
 # enable numlock
 input * xkb_numlock enable
+# layout stuff
+input type:keyboard {
+    xkb_layout "us,ru"
+    xkb_options "grp:win_space_toggle"
+}
 
 ### Key bindings
 
