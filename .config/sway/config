@@ -166,7 +166,7 @@ input type:keyboard {
 # Displays stuff:
 #
     bindsym $mod+Shift+m exec swaymsg output eDP-1 disable
-
+    bindswitch lid:on output eDP-1 disable
 #
 # Scratchpad:
 #
