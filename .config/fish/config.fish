@@ -1,9 +1,12 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    alias 1920x1080="xrandr --output Virtual1 --mode '1920x1080'"
-    alias 1366x768="xrandr --output Virtual1 --mode '1366x768'"
+    alias 1920x1080="xrandr --output Virtual-1 --mode '1920x1080'"
+    alias 1366x768="xrandr --output Virtual-1 --mode '1366x768'"
 
     alias cat="bat"
+    if [ $TERM  = "xterm-kitty" ]
+        alias icat="kitten icat"
+    end
 end
 
 # https://michaeluloth.com/neovim-switch-configs/
