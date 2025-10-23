@@ -18,6 +18,28 @@ return {
     local ignore_patterns = { 'node_modules', '.git', '.venv', 'target', 'lock', 'dotbot', 'dotbot-omnipkg' }
 
     require('telescope').setup {
+      defaults = {
+        preview = { treesitter = false },
+        color_devicons = true,
+        sorting_strategy = "ascending",
+        borderchars = {
+          "─", -- top
+          "│", -- right
+          "─", -- bottom
+          "│", -- left
+          "┌", -- top-left
+          "┐", -- top-right
+          "┘", -- bottom-right
+          "└", -- bottom-left
+        },
+        path_displays = { "smart" },
+        layout_config = {
+          height = 100,
+          width = 400,
+          prompt_position = "top",
+          preview_cutoff = 40,
+        },
+      },
       pickers = {
         find_files = {
           file_ignore_patterns = ignore_patterns,
@@ -30,15 +52,10 @@ return {
           end,
         },
       },
-      extensions = {
-        ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
-        },
-      },
     }
 
-    pcall(require('telescope').load_extension, 'fzf')
-    pcall(require('telescope').load_extension, 'ui-select')
+    require('telescope').load_extension("fzf")
+    require('telescope').load_extension("ui-select")
 
     local builtin = require 'telescope.builtin'
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
