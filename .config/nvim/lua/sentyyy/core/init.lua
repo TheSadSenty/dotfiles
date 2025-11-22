@@ -1,2 +1,2 @@
 require 'sentyyy.core.options'
--- require("se.core.keymaps")
+require 'sentyyy.core.keymaps'

@@ -1,3 +1,3 @@
-require("sentyyy.core.options")
+require("sentyyy.core")
 require("sentyyy.lazy")
 require("sentyyy.lsp")

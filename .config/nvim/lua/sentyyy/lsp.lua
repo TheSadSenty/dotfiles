@@ -25,6 +25,9 @@ vim.diagnostic.config {
   severity_sort = true,
   float = { border = 'rounded', source = 'if_many' },
   underline = { severity = severity.ERROR },
+  jump = {
+    float = true,
+  },
   signs = {
     text = {
       [severity.ERROR] = ' ',
