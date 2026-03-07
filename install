@@ -29,5 +29,5 @@ run_dotbot() {
 }
 
 run_dotbot 'steps/main.yaml' || true
-# run_dotbot 'steps/xorg.yaml' || true
+# run_dotbot 'steps/wayland.yaml' || true
 # run_dotbot 'steps/vbox.yaml' || true

@@ -3,17 +3,14 @@
       stderr: true
       stdout: true
 
-# Xorg stuff
-- shell:
-    - command: sudo pacman --needed --noconfirm -Syy xorg
-      description: Install whole Xorg package group
+# niri stuff
+- omnipkg:
+  - install: [niri, fuzzel, mako, waybar, swaybg, swayidle, swaylock, xdg-desktop-portal-gtk]
 
 - omnipkg:
-    - install: [xdotool, maim, ly, xorg-xinit, xclip]
-
-# i3 stuff
-- omnipkg:
-    - install: [i3blocks, i3lock, i3status, i3-wm, rofi]
+   - install: [
+          { pacman: ly },
+      ]
 
 # Other stuff
 - omnipkg:
