@@ -57,10 +57,6 @@ vim.opt.scrolloff = 10
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
--- search settings
-vim.opt.ignorecase = true -- ignore case when searching
-vim.opt.smartcase = true  -- if you include mixed case in your search, assumes you want case-sensitive
-
 -- turn off swapfile
 vim.opt.swapfile = false
 
