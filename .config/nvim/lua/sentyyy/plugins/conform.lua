@@ -17,10 +17,10 @@ return {
     },
   },
   config = function()
-    local conform = require("conform")
+    local conform = require 'conform'
     conform.setup()
-    vim.keymap.set({ "n", "v" }, "<leader>f", function()
-      conform.format({ async = true, lsp_fallback = true })
-    end, { desc = "[F]ormat buffer" })
+    vim.keymap.set({ 'n', 'v' }, '<leader>f', function()
+      conform.format { async = true, lsp_fallback = true }
+    end, { desc = '[F]ormat buffer' })
   end,
 }
