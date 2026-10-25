@@ -53,10 +53,10 @@ binds {
     Mod+CTRL+Home                       { move-column-to-first; }
     Mod+CTRL+End                        { move-column-to-last; }
 
-    Mod+Shift+Left                      { focus-monitor-left; }
-    Mod+Shift+Right                     { focus-monitor-right; }
-    Mod+Shift+UP                        { focus-monitor-up; }
-    Mod+Shift+Down                      { focus-monitor-down; }
+    Mod+Shift+H                      { focus-monitor-left; }
+    Mod+Shift+L                     { focus-monitor-right; }
+    Mod+Shift+K                        { focus-monitor-up; }
+    Mod+Shift+J                      { focus-monitor-down; }
 
     Mod+Shift+CTRL+H                 { move-column-to-monitor-left; }
     Mod+Shift+CTRL+L                { move-column-to-monitor-right; }
@@ -111,13 +111,13 @@ binds {
     Mod+Shift+Equal                     { set-window-height "+10%"; }
     Mod+R                               { switch-preset-column-width; }
     Mod+Shift+R                         { switch-preset-window-height; }
-    
+
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
     // If the window is already in a column, they will expel it out.
     Mod+BracketLeft                     { consume-or-expel-window-left; }
     Mod+BracketRight                    { consume-or-expel-window-right; }
-    
+
     // ─── Modes ───
     Mod+T                               { toggle-window-floating; }
     Mod+F                               { fullscreen-window; }
