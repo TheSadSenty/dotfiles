@@ -1,0 +1,81 @@
+[theme]
+mode = "dark"
+source = "custom"
+custom_palette = "GitHub Dark"
+
+[shell]
+avatar_path = "/home/sentyyy/.face"
+font_family = "JetBrainsMono Nerd Font"
+telemetry_enabled = false
+polkit_agent = true
+clipboard_auto_paste = "off"
+
+[shell.animation]
+speed = 1.0
+
+[shell.launcher]
+auto_paste = "off"
+
+[bar]
+order = ["default"]
+
+[bar.default]
+position = "top"
+background_opacity = 0.93
+radius = 12
+margin_ends = 4
+padding = 2
+widget_spacing = 6
+start = ["clock", "temp", "cpu", "ram"]
+center = ["workspaces"]
+end = ["notifications", "brightness", "volume", "battery", "network", "keyboard_layout", "tray", "control-center"]
+
+[widget.clock]
+type = "clock"
+format = "{:%H:%M %a, %b %d}"
+
+[widget.temp]
+type = "sysmon"
+stat = "cpu_temp"
+
+[widget.cpu]
+type = "sysmon"
+stat = "cpu_usage"
+
+[widget.ram]
+type = "sysmon"
+stat = "ram_used"
+
+[widget.volume]
+type = "volume"
+device = "output"
+
+[widget.keyboard_layout]
+type = "keyboard_layout"
+
+[widget.network]
+type = "network"
+
+[widget.battery]
+type = "battery"
+
+[widget.brightness]
+type = "brightness"
+
+[widget.notifications]
+type = "notifications"
+
+[widget.tray]
+type = "tray"
+
+[widget.control-center]
+type = "control-center"
+
+[wallpaper]
+directory = "/home/sentyyy/Pictures/Wallpapers"
+enabled = true
+fill_mode = "crop"
+transition_on_startup = false
+
+[desktop_widgets]
+enabled = false
